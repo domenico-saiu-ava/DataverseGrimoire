@@ -1,0 +1,229 @@
+{
+  "_comment": "Curated business-term synonyms for the most common Dataverse entities. Italian (it) + English (en) terms users actually type when they don't remember the logical name. Keep terms lowercase, no punctuation.",
+  "entities": {
+    "account": {
+      "it": ["cliente", "clienti", "azienda", "aziende", "organizzazione", "business"],
+      "en": ["account", "customer", "company", "organization", "business", "client"]
+    },
+    "contact": {
+      "it": ["contatto", "contatti", "persona", "persone", "individuo", "referente"],
+      "en": ["contact", "person", "individual", "people"]
+    },
+    "lead": {
+      "it": ["lead", "contatto interessato", "prospect", "potenziale cliente"],
+      "en": ["lead", "prospect"]
+    },
+    "opportunity": {
+      "it": ["opportunita", "opportunita di vendita", "trattativa", "deal"],
+      "en": ["opportunity", "sales opportunity", "deal", "pipeline"]
+    },
+    "quote": {
+      "it": ["preventivo", "preventivi", "offerta", "offerte"],
+      "en": ["quote", "quotation", "proposal"]
+    },
+    "quotedetail": {
+      "it": ["riga preventivo", "voce preventivo", "dettaglio preventivo"],
+      "en": ["quote line", "quote detail", "quote item"]
+    },
+    "salesorder": {
+      "it": ["ordine", "ordini", "ordine di vendita", "ordine cliente"],
+      "en": ["order", "sales order", "customer order"]
+    },
+    "salesorderdetail": {
+      "it": ["riga ordine", "voce ordine", "dettaglio ordine"],
+      "en": ["order line", "order detail", "order item"]
+    },
+    "invoice": {
+      "it": ["fattura", "fatture", "fattura di vendita"],
+      "en": ["invoice", "sales invoice", "bill"]
+    },
+    "invoicedetail": {
+      "it": ["riga fattura", "voce fattura", "dettaglio fattura"],
+      "en": ["invoice line", "invoice detail", "invoice item"]
+    },
+    "product": {
+      "it": ["prodotto", "prodotti", "articolo", "articoli", "sku"],
+      "en": ["product", "item", "sku"]
+    },
+    "pricelevel": {
+      "it": ["listino", "listini", "listino prezzi"],
+      "en": ["price list", "pricelevel", "price level"]
+    },
+    "productpricelevel": {
+      "it": ["riga listino", "voce listino", "prezzo prodotto"],
+      "en": ["price list item", "product price"]
+    },
+    "competitor": {
+      "it": ["concorrente", "concorrenti"],
+      "en": ["competitor"]
+    },
+    "incident": {
+      "it": ["caso", "casi", "ticket", "segnalazione", "richiesta assistenza"],
+      "en": ["case", "ticket", "incident", "support case"]
+    },
+    "activity": {
+      "it": ["attivita", "attivita generica"],
+      "en": ["activity", "activitypointer"]
+    },
+    "task": {
+      "it": ["compito", "task", "attivita da fare", "todo"],
+      "en": ["task", "todo", "to-do"]
+    },
+    "email": {
+      "it": ["email", "e-mail", "messaggio email", "posta elettronica"],
+      "en": ["email", "e-mail", "message"]
+    },
+    "phonecall": {
+      "it": ["telefonata", "chiamata", "chiamata telefonica"],
+      "en": ["phone call", "call", "phonecall"]
+    },
+    "appointment": {
+      "it": ["appuntamento", "appuntamenti", "riunione", "meeting"],
+      "en": ["appointment", "meeting"]
+    },
+    "letter": {
+      "it": ["lettera", "lettere"],
+      "en": ["letter"]
+    },
+    "fax": {
+      "it": ["fax"],
+      "en": ["fax"]
+    },
+    "campaign": {
+      "it": ["campagna", "campagne", "campagna marketing"],
+      "en": ["campaign", "marketing campaign"]
+    },
+    "campaignactivity": {
+      "it": ["attivita campagna", "campagna attivita"],
+      "en": ["campaign activity"]
+    },
+    "campaignresponse": {
+      "it": ["risposta campagna"],
+      "en": ["campaign response"]
+    },
+    "list": {
+      "it": ["lista", "lista marketing", "marketing list"],
+      "en": ["marketing list", "list"]
+    },
+    "systemuser": {
+      "it": ["utente", "utenti", "utente sistema", "user"],
+      "en": ["user", "system user", "systemuser"]
+    },
+    "team": {
+      "it": ["team", "gruppo", "gruppo lavoro"],
+      "en": ["team", "group"]
+    },
+    "businessunit": {
+      "it": ["unita organizzativa", "unita business", "divisione", "business unit"],
+      "en": ["business unit", "division", "businessunit"]
+    },
+    "role": {
+      "it": ["ruolo", "ruolo sicurezza", "ruoli"],
+      "en": ["role", "security role"]
+    },
+    "territory": {
+      "it": ["territorio", "territori", "area geografica"],
+      "en": ["territory", "region"]
+    },
+    "annotation": {
+      "it": ["nota", "note", "allegato", "allegati"],
+      "en": ["note", "annotation", "attachment"]
+    },
+    "knowledgearticle": {
+      "it": ["articolo conoscenza", "articolo kb", "knowledge base"],
+      "en": ["knowledge article", "kb article", "knowledge base"]
+    },
+    "contract": {
+      "it": ["contratto", "contratti"],
+      "en": ["contract"]
+    },
+    "contractdetail": {
+      "it": ["riga contratto", "voce contratto"],
+      "en": ["contract line", "contract detail"]
+    },
+    "queue": {
+      "it": ["coda", "code"],
+      "en": ["queue"]
+    },
+    "queueitem": {
+      "it": ["elemento coda", "voce coda"],
+      "en": ["queue item", "queueitem"]
+    },
+    "goal": {
+      "it": ["obiettivo", "obiettivi", "target"],
+      "en": ["goal", "target", "kpi"]
+    },
+    "subject": {
+      "it": ["argomento", "categoria", "soggetto"],
+      "en": ["subject", "category", "topic"]
+    },
+    "discount": {
+      "it": ["sconto", "sconti"],
+      "en": ["discount"]
+    },
+    "discounttype": {
+      "it": ["tipo sconto", "tipologia sconto"],
+      "en": ["discount type", "discounttype"]
+    },
+    "entitlement": {
+      "it": ["diritto", "diritti", "entitlement", "diritto assistenza"],
+      "en": ["entitlement", "support entitlement"]
+    },
+    "service": {
+      "it": ["servizio", "servizi"],
+      "en": ["service"]
+    },
+    "serviceappointment": {
+      "it": ["appuntamento servizio", "attivita servizio"],
+      "en": ["service appointment", "service activity"]
+    },
+    "bookableresource": {
+      "it": ["risorsa prenotabile", "risorsa", "risorse"],
+      "en": ["bookable resource", "resource"]
+    },
+    "bookableresourcebooking": {
+      "it": ["prenotazione risorsa", "prenotazione"],
+      "en": ["booking", "resource booking"]
+    },
+    "socialprofile": {
+      "it": ["profilo social", "profilo social media"],
+      "en": ["social profile"]
+    },
+    "socialactivity": {
+      "it": ["attivita social", "post social"],
+      "en": ["social activity"]
+    },
+    "recurringappointmentmaster": {
+      "it": ["appuntamento ricorrente", "ricorrenza"],
+      "en": ["recurring appointment", "recurring meeting"]
+    },
+    "mailbox": {
+      "it": ["casella postale", "mailbox", "casella email"],
+      "en": ["mailbox"]
+    },
+    "emailtemplate": {
+      "it": ["modello email", "template email"],
+      "en": ["email template"]
+    },
+    "letter_template": {
+      "it": ["modello lettera"],
+      "en": ["letter template"]
+    },
+    "organization": {
+      "it": ["organizzazione dataverse", "tenant", "ambiente"],
+      "en": ["organization", "tenant", "environment"]
+    },
+    "transactioncurrency": {
+      "it": ["valuta", "divisa"],
+      "en": ["currency", "transaction currency"]
+    },
+    "uom": {
+      "it": ["unita di misura", "unita misura"],
+      "en": ["unit of measure", "uom", "unit"]
+    },
+    "uomschedule": {
+      "it": ["gruppo unita misura"],
+      "en": ["unit group", "uom schedule"]
+    }
+  }
+}

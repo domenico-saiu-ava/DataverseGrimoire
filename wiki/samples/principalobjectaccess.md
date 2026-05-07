@@ -1,0 +1,8 @@
+# Samples referencing `principalobjectaccess`
+
+_4 files in microsoft/PowerApps-Samples that mention this entity._
+
+- [`dataverse/orgsvc/CSharp-NETCore/Search/Program.cs`](https://github.com/microsoft/PowerApps-Samples/blob/main/dataverse/orgsvc/CSharp-NETCore/Search/Program.cs)
+- [`dataverse/orgsvc/CSharp-NETCore/Search/types/EntityStatusInfo.cs`](https://github.com/microsoft/PowerApps-Samples/blob/main/dataverse/orgsvc/CSharp-NETCore/Search/types/EntityStatusInfo.cs)
+- [`dataverse/webapi/CSharp-NETx/Search/Program.cs`](https://github.com/microsoft/PowerApps-Samples/blob/main/dataverse/webapi/CSharp-NETx/Search/Program.cs)
+- [`dataverse/webapi/CSharp-NETx/WebAPIService/Search/Types/EntityStatusInfo.cs`](https://github.com/microsoft/PowerApps-Samples/blob/main/dataverse/webapi/CSharp-NETx/WebAPIService/Search/Types/EntityStatusInfo.cs)

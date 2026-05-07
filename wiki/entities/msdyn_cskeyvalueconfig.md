@@ -1,0 +1,75 @@
+---
+logical: "msdyn_cskeyvalueconfig"
+display: "Customer Service Key Value Configuration"
+entitySetName: "msdyn_cskeyvalueconfigs"
+primaryId: "msdyn_cskeyvalueconfigid"
+primaryName: "msdyn_name"
+tableType: "Standard"
+ownership: "OrganizationOwned"
+---
+
+# Customer Service Key Value Configuration
+
+## Identity
+
+| Property | Value |
+| --- | --- |
+| Logical name | `msdyn_cskeyvalueconfig` |
+| Display name | Customer Service Key Value Configuration |
+| Display (plural) | Customer Service Key Value Configurations |
+| Schema name | `msdyn_cskeyvalueconfig` |
+| Entity set (Web API) | `msdyn_cskeyvalueconfigs` |
+| Primary id attribute | `msdyn_cskeyvalueconfigid` |
+| Primary name attribute | `msdyn_name` |
+| Table type | Standard |
+| Ownership | OrganizationOwned |
+
+## Web API examples
+
+```http
+GET /api/data/v9.2/msdyn_cskeyvalueconfigs?$select=msdyn_name&$top=10
+GET /api/data/v9.2/msdyn_cskeyvalueconfigs(<guid>)
+POST /api/data/v9.2/msdyn_cskeyvalueconfigs
+PATCH /api/data/v9.2/msdyn_cskeyvalueconfigs(<guid>)
+DELETE /api/data/v9.2/msdyn_cskeyvalueconfigs(<guid>)
+```
+
+## Attributes
+
+Writable: **10** · Read-only: **8**
+
+### Writable
+
+`ImportSequenceNumber`, `msdyn_ConfigKey`, `msdyn_ConfigValue`, `msdyn_cskeyvalueconfigId`, `msdyn_name`, `OverriddenCreatedOn`, `statecode`, `statuscode`, `TimeZoneRuleVersionNumber`, `UTCConversionTimeZoneCode`
+
+### Read-only
+
+`CreatedBy`, `CreatedOn`, `CreatedOnBehalfBy`, `ModifiedBy`, `ModifiedOn`, `ModifiedOnBehalfBy`, `OrganizationId`, `VersionNumber`
+
+## Relationships
+
+### Many-to-One (5)
+
+| Name | Target entity | Referencing attribute | Navigation property |
+| --- | --- | --- | --- |
+| `lk_msdyn_cskeyvalueconfig_createdby` | [systemuser](systemuser.md) | `createdby` | `createdby` |
+| `lk_msdyn_cskeyvalueconfig_createdonbehalfby` | [systemuser](systemuser.md) | `createdonbehalfby` | `createdonbehalfby` |
+| `lk_msdyn_cskeyvalueconfig_modifiedby` | [systemuser](systemuser.md) | `modifiedby` | `modifiedby` |
+| `lk_msdyn_cskeyvalueconfig_modifiedonbehalfby` | [systemuser](systemuser.md) | `modifiedonbehalfby` | `modifiedonbehalfby` |
+| `organization_msdyn_cskeyvalueconfig` | [organization](organization.md) | `organizationid` | `organizationid` |
+
+### One-to-Many (6)
+
+| Name | Target entity | Referencing attribute | Navigation property |
+| --- | --- | --- | --- |
+| `msdyn_cskeyvalueconfig_AsyncOperations` | _n/a_ | `regardingobjectid` | _n/a_ |
+| `msdyn_cskeyvalueconfig_BulkDeleteFailures` | _n/a_ | `regardingobjectid` | _n/a_ |
+| `msdyn_cskeyvalueconfig_MailboxTrackingFolders` | _n/a_ | `regardingobjectid` | _n/a_ |
+| `msdyn_cskeyvalueconfig_PrincipalObjectAttributeAccesses` | _n/a_ | `objectid` | _n/a_ |
+| `msdyn_cskeyvalueconfig_ProcessSession` | _n/a_ | `regardingobjectid` | _n/a_ |
+| `msdyn_cskeyvalueconfig_SyncErrors` | _n/a_ | `regardingobjectid` | _n/a_ |
+
+
+## Source
+
+Generated from [msdyn_cskeyvalueconfig.md](https://github.com/MicrosoftDocs/dynamics-365-customer-engagement/blob/main/ce/developer/reference/entities/msdyn_cskeyvalueconfig.md) on 2026-05-06.

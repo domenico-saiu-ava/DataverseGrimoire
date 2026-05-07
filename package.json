@@ -1,0 +1,20 @@
+{
+  "name": "dataverse-grimoire",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local searchable wiki of Microsoft Dataverse entity documentation, queryable through a Claude Code skill.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-wiki.mjs",
+    "update": "node scripts/build-wiki.mjs --update",
+    "rebuild": "node scripts/build-wiki.mjs --clean",
+    "custom": "node scripts/build-custom.mjs",
+    "custom:logout": "node scripts/build-custom.mjs --logout"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
