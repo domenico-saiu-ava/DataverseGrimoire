@@ -40,3 +40,19 @@ When asked to modify the pipeline (`scripts/build-wiki.mjs`, `scripts/build-cust
 - Single dep: `gray-matter` for parsing markdown frontmatter.
 - Auth for the custom ingestor uses a device code flow against the well-known Microsoft Power Query public client (`51f81489-…`) — no App Registration needed.
 - The shared rendering function lives in `scripts/render-entity.mjs` (`renderEntityMd`) and is consumed by both the public and custom build pipelines. Keep its signature stable.
+
+### npm scripts reference
+
+| Script | Command | Output |
+|--------|---------|--------|
+| Build public wiki | `npm run build` | `wiki/` |
+| Incremental update | `npm run update` | `wiki/` |
+| Ingest custom tenant | `npm run custom -- --url <env-url>` | `wiki/custom/` |
+| Build functional wiki | `npm run docs` | `wiki_from_docs/` |
+| Rebuild functional wiki | `npm run docs:rebuild` | `wiki_from_docs/` |
+| Run comparison analysis | `npm run compare` | `compare_results.json` |
+| Export comparison report | `npm run compare:report` | `wiki_from_docs/comparison_report.md` |
+
+### Wiki comparison (wiki-compare skill)
+
+When asked to compare the two wikis, check alignment, or export a discrepancy report, use the `wiki-compare` skill (`.claude/skills/wiki-compare/SKILL.md`). It runs `npm run compare:report` and produces `wiki_from_docs/comparison_report.md` with three sections: aligned entities, entities with field gaps, and entities absent from the technical wiki.

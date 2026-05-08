@@ -12,15 +12,23 @@ Quando devi scrivere una query Web API o FetchXML su Dataverse, il problema rico
    - `wiki/entities/{logical}.md` — un file per ogni entità (~1350 tra core platform e Dynamics 365 first-party apps)
    - `wiki/index.json` — indice macchina con display name, description, sinonimi IT/EN
    - `wiki/samples/{logical}.md` — link ai file di `PowerApps-Samples` che menzionano l'entità
-2. **Agent integrations**: il wiki è esposto a quattro coding agent diversi tramite altrettanti file di istruzione (vedi tabella sotto). Workflow comune: ricerca → top-3 candidati → scheda dettaglio → esempio Web API.
+2. **Functional wiki pipeline** (`npm run docs`): legge i documenti di analisi funzionale in `Documentation/` (file Excel + Word) e genera:
+   - `wiki_from_docs/entities/{logical}.md` — scheda funzionale con nomi IT, business area, campi documentati nelle AF, riferimenti incrociati ai documenti
+   - `wiki_from_docs/processes/{slug}.md` — pagine di processo (gestione-lead, esitazione, appuntamenti, ecc.)
+   - `wiki_from_docs/index.json` — indice funzionale con sinonimi IT, business area, processi correlati
+   - `wiki_from_docs/comparison_report.md` — report di allineamento (rigenerato con `npm run compare:report`)
+3. **Agent integrations**: il wiki è esposto agli agent tramite file di istruzione (vedi tabella sotto). Workflow a due layer: ricerca tecnica (`wiki/`) → validazione funzionale (`wiki_from_docs/`) → top-3 candidati → scheda dettaglio → esempio Web API.
 
 ## Setup base (build del wiki)
 
 ```bash
 npm install
-npm run build      # prima volta: clone + parse (~1 min)
-npm run update     # aggiornamenti successivi: pull + reparse incrementale
-npm run rebuild    # cancella .cache/ e ricostruisce da zero
+npm run build          # prima volta: clone + parse (~1 min)
+npm run update         # aggiornamenti successivi: pull + reparse incrementale
+npm run rebuild        # cancella .cache/ e ricostruisce da zero
+npm run docs           # genera wiki_from_docs/ dai documenti di analisi
+npm run docs:rebuild   # pulisce e rigenera wiki_from_docs/ da zero
+npm run compare:report # confronta i due wiki ed esporta comparison_report.md
 ```
 
 Il wiki vive sotto `wiki/`. Una volta costruito, è interrogabile da uno dei coding agent supportati (vedi sezione successiva). Lo stesso `wiki/` serve tutti gli agent: il build si fa una volta sola.
@@ -32,6 +40,7 @@ DataverseGrimoire viene letto da quattro agent diversi tramite quattro file di i
 | Agent | File di istruzione | Trigger | Setup richiesto |
 |---|---|---|---|
 | Claude Code | `.claude/skills/dataverse-grimoire/SKILL.md` | Auto via match sulla `description` della skill | Niente — basta aprire Claude Code in questa cartella |
+| Claude Code (compare) | `.claude/skills/wiki-compare/SKILL.md` | Auto via match ("confronto wiki", "discrepanze", "campi mancanti") | Niente |
 | Codex CLI / Cursor / Cline / Aider | `AGENTS.md` (root) | Always-on nel repo (convenzione [agents.md](https://agents.md)) | Niente — l'agente legge `AGENTS.md` automaticamente |
 | GitHub Copilot Chat (ambient) | `.github/copilot-instructions.md` | Always-on quando lavori sul repo | Abilitare le custom instructions in VS Code (vedi sotto) |
 | GitHub Copilot Chat (slash command) | `.github/prompts/dataverse-grimoire.prompt.md` | Esplicito: `/dataverse-grimoire` | Abilitare i prompt files in VS Code (vedi sotto) |
@@ -89,7 +98,7 @@ Se l'agent risponde identificando `quote` come entità (matchando il sinonimo it
 
 ### Mantenere i 4 file allineati
 
-I 4 file (`SKILL.md`, `AGENTS.md`, `copilot-instructions.md`, `dataverse-grimoire.prompt.md`) duplicano la stessa logica. **Source of truth**: `.claude/skills/dataverse-grimoire/SKILL.md` (il più strutturato). Quando modifichi il workflow:
+I 4 file (`SKILL.md`, `AGENTS.md`, `copilot-instructions.md`, `dataverse-grimoire.prompt.md`) duplicano la stessa logica. **Source of truth**: `.claude/skills/dataverse-grimoire/SKILL.md` (il più strutturato). La skill `wiki-compare` ha il suo source of truth in `.claude/skills/wiki-compare/SKILL.md` e non ha duplicati negli altri file (è specifica di Claude Code). Quando modifichi il workflow:
 
 1. Aggiorna `SKILL.md` per primo.
 2. Propaga le modifiche sostanziali a `AGENTS.md` e `.github/prompts/dataverse-grimoire.prompt.md` (entrambi sono "full body").
@@ -196,6 +205,8 @@ Questa versione copre:
 - ✅ Sinonimi italiani per le ~50 entità più comuni (account, contact, opportunity, lead, invoice, salesorder, …)
 - ✅ Sample di codice cross-referenziati dai repo PowerApps-Samples
 - ✅ **Entità custom da un tenant Dataverse reale** via device code flow (`npm run custom`)
+- ✅ **Wiki funzionale da documenti di analisi** (Excel + Word) con nomi IT, business area, processi (`npm run docs`)
+- ✅ **Report di allineamento** tra wiki funzionale e tecnico con classificazione dei gap (`npm run compare:report`)
 
 Esplicitamente fuori scope (per ora):
 - ❌ Service principal / OAuth client_credentials (solo device code interattivo per ora)

@@ -30,6 +30,19 @@ Questo wiki viene consultato **dopo** per validare/rafforzare la scelta tecnica:
 ```bash
 npm run docs          # genera / rigenera wiki_from_docs/
 npm run docs:rebuild  # pulisce e rigenera da zero
+npm run compare:report  # confronta con wiki/ ed esporta comparison_report.md
 ```
+
+## Confronto con il wiki tecnico
+
+`comparison_report.md` (in questa cartella) contiene l'ultimo report di allineamento tra questo layer funzionale e il layer tecnico (`wiki/`). È organizzato in tre sezioni:
+
+| Sezione | Descrizione |
+| --- | --- |
+| **A — Allineate** | Entità presenti in entrambi i wiki, nessun campo mancante |
+| **B — Gap di campi** | Entità presenti in entrambi, ma con campi AF assenti dal wiki tecnico |
+| **C — Assenti dal wiki tecnico** | Entità custom non ancora ingerite (richiedono `npm run custom`) |
+
+Per rigenerare: `npm run compare:report`
 
 _Generato il: 2026-05-07_
