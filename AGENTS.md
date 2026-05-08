@@ -40,7 +40,10 @@ If both a `source: "custom"` entry and a public docs entry exist for the same `l
 
 For the full workflow with worked examples, edge cases, and updating instructions, read **`.claude/skills/dataverse-grimoire/SKILL.md`** (the canonical version). This `AGENTS.md` is intentionally short to minimize context cost on every prompt; the skill file is the source of truth for any ambiguity.
 
+For wiki comparison / discrepancy analysis, see **`.claude/skills/wiki-compare/SKILL.md`** — activated when the user asks to compare the two wikis, find missing entities or fields, or export an alignment report.
+
 Sibling references (kept in sync):
 - `.claude/skills/dataverse-grimoire/SKILL.md` — Claude Code skill (auto-activated by description match)
+- `.claude/skills/wiki-compare/SKILL.md` — Wiki comparison skill
 - `.github/copilot-instructions.md` — GitHub Copilot ambient instructions
 - `.github/prompts/dataverse-grimoire.prompt.md` — Copilot Chat slash command (`/dataverse-grimoire`)

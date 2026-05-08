@@ -11,7 +11,9 @@
     "custom": "node scripts/build-custom.mjs",
     "custom:logout": "node scripts/build-custom.mjs --logout",
     "docs": "node scripts/build-wiki-from-docs.mjs",
-    "docs:rebuild": "node scripts/build-wiki-from-docs.mjs --clean"
+    "docs:rebuild": "node scripts/build-wiki-from-docs.mjs --clean",
+    "compare": "node scripts/compare-wikis.mjs",
+    "compare:report": "node scripts/compare-wikis.mjs && node scripts/export-wiki-compare-report.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
