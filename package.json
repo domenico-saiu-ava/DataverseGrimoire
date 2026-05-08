@@ -9,10 +9,14 @@
     "update": "node scripts/build-wiki.mjs --update",
     "rebuild": "node scripts/build-wiki.mjs --clean",
     "custom": "node scripts/build-custom.mjs",
-    "custom:logout": "node scripts/build-custom.mjs --logout"
+    "custom:logout": "node scripts/build-custom.mjs --logout",
+    "docs": "node scripts/build-wiki-from-docs.mjs",
+    "docs:rebuild": "node scripts/build-wiki-from-docs.mjs --clean"
   },
   "dependencies": {
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "mammoth": "^1.12.0",
+    "xlsx": "^0.18.5"
   },
   "engines": {
     "node": ">=20"

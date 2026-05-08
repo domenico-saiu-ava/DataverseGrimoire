@@ -18,10 +18,14 @@ You can also invoke that workflow explicitly with the `/dataverse-grimoire` slas
 
 **Quick rules** (the prompt file has the full version):
 
-1. Read `wiki/index.json` first to score candidates by logical / synonyms / display / description.
+1. Read `wiki/index.json` first (technical layer, **authoritative**) to score candidates by logical / synonyms / display / description.
 2. If both a `source: "custom"` entry and a public entry exist for the same logical name, **prefer the custom one** — the user's tenant is authoritative.
 3. Read the file at the path in the index entry's `file` field (either `wiki/entities/X.md` or `wiki/custom/X.md`) and surface only the relevant info: logical name, entity set, primary attributes, a `GET /api/data/v9.2/...` example, and the attributes / relationships the user actually needs.
-4. If the wiki is empty, suggest `npm run build`. If a custom entity is missing, suggest `npm run custom -- --url <env-url>`. Don't scrape or guess.
+4. **Then** check `wiki_from_docs/index.json` for the top candidate (functional layer, not authoritative). Match on `dataverse_logical`. Three outcomes:
+   - ✅ Match → append "Contesto funzionale" section (business area, processes, AF references, generated date)
+   - ⚠️ Match with potential staleness → discrepancy warning + ask user preference + draft message for Dataverse team
+   - ❌ No match → inline note `_⚠️ Non documentata nelle AF. Schema tecnico disponibile._`
+5. If the technical wiki is empty, suggest `npm run build`. If a custom entity is missing, suggest `npm run custom -- --url <env-url>`. If `wiki_from_docs/` is missing, suggest `npm run docs`. Don't scrape or guess.
 
 ## Style
 

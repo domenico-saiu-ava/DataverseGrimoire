@@ -12,11 +12,13 @@ Whenever the user asks about Dataverse / Dynamics 365 / Power Platform / CRM tab
 
 ## Workflow (short form)
 
-1. **Read `wiki/index.json` first.** It contains every known entity with display name, synonyms (IT/EN), description, file path, and (if present) a `source: "custom"` marker for live tenant data.
-2. **Score candidates** by, in order: exact match on `logical` / `entitySetName` → exact match on `synonyms_it` / `synonyms_en` → substring on `display` / `displayPlural` → substring on `description`.
-3. If ambiguous, fall back to `grep` over `wiki/entities/*.md` and `wiki/custom/*.md` (useful when the user names an attribute, e.g. `creditlimit`, instead of an entity).
-4. **Read the matching `.md`** at the path stored in the index entry's `file` field. It can be `wiki/entities/{logical}.md` (public docs) or `wiki/custom/{logical}.md` (live tenant).
-5. **Reply** with: logical name, entity set (Web API path), primary id and name attributes, a copy-pasteable `GET /api/data/v9.2/<set>?$select=…` line, and only the attributes / relationships relevant to the user's question. Don't dump the full schema unless asked.
+1. **Read `wiki/index.json` FIRST** (technical layer, authoritative). Score candidates: exact `logical`/`entitySetName` → synonyms → display → description. Present top 3 if ambiguous.
+2. Read the matching `.md` at the `file` path (`wiki/entities/X.md` or `wiki/custom/X.md`). Surface: logical, entity set, primary attributes, `GET /api/data/v9.2/...` example, relevant fields/relationships.
+3. **Then check `wiki_from_docs/index.json`** for the top candidate only (functional layer, not authoritative). Match on `dataverse_logical` first, fallback on `display_it`. Three outcomes:
+   - ✅ Match found → append **"Contesto funzionale"** section (business area, processi, riferimenti AF, data generazione docs)
+   - ⚠️ Match found but potential staleness (generated date older or user reveals gap) → explicit discrepancy warning + ask user preference + bozza messaggio per team Dataverse
+   - ❌ No match → inline note `_⚠️ Entità non documentata nelle AF (wiki_from_docs). Schema tecnico disponibile._`
+4. If ambiguous in step 1, fall back to `grep` over `wiki/entities/*.md` and `wiki/custom/*.md`.
 
 ### Prefer-custom rule
 
@@ -26,6 +28,7 @@ If both a `source: "custom"` entry and a public docs entry exist for the same `l
 
 - No `wiki/` folder or empty `wiki/index.json` → tell the user to run `npm run build`. Don't scrape Microsoft Learn yourself.
 - User asks about an entity that looks custom (e.g. `xyz_*` prefix) but no `source: "custom"` entries exist → suggest `npm run custom -- --url https://<env>.crm4.dynamics.com` to populate `wiki/custom/`. Don't guess the schema.
+- `wiki_from_docs/` missing or empty → tell the user to run `npm run docs`. Run after publishing new analysis documents or after schema changes in the tenant.
 
 ## Style
 

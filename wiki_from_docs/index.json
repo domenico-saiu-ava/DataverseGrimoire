@@ -1,0 +1,1838 @@
+[
+  {
+    "type": "entity",
+    "logical": "cai_preferredcalendar",
+    "display_it": "Agenda preferita",
+    "synonyms_it": [
+      "agenda preferita"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Visualizzazione agenda di collaboratori e filtri di visualizzazione › Visualizzazione agenda collega"
+    ],
+    "dataverse_logical": "cai_preferredcalendar",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_preferredcalendar.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_campaign",
+    "display_it": "Anagrafe campagna",
+    "synonyms_it": [
+      "anagrafe campagna"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_campaign",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_campaign.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_campaignoffer",
+    "display_it": "Offerta campagna",
+    "synonyms_it": [
+      "offerta campagna"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_campaignoffer",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_campaignoffer.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_argument",
+    "display_it": "Argomento",
+    "synonyms_it": [
+      "argomento"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Catalogo prodotti",
+      "Configurazioni di agenda",
+      "Visualizzazione propria agenda e filtri di visualizzazione",
+      "Dettagli appuntamento",
+      "Gestione lead e suggerimenti con inserimento prodotto aggiuntivo in esito",
+      "Creazione nuova lead spontanea di cliente o ex cliente (anagrafato su anagrafe ordinaria o prospect)",
+      "Widget To-do list commerciale in scrivania",
+      "Widget agenda in scrivania"
+    ],
+    "dataverse_logical": "cai_argument",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_argument.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "appointment",
+    "display_it": "Appuntamento",
+    "synonyms_it": [
+      "appuntamento"
+    ],
+    "synonyms_en": [],
+    "business_area": "Standard D365",
+    "processes": [
+      "Obiettivi e valore atteso",
+      "Permessi, coni di visibilità e azioni consentite",
+      "Tassonomia generale",
+      "Fonti alimentanti – vista generale",
+      "Configurazioni di agenda",
+      "Visualizzazione propria agenda e filtri di visualizzazione",
+      "Dettagli appuntamento",
+      "Pagina agende dei colleghi e processi correlati"
+    ],
+    "dataverse_logical": "appointment",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/appointment.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "recurringappointmentmaster",
+    "display_it": "Appuntamento ricorrente",
+    "synonyms_it": [
+      "appuntamento ricorrente"
+    ],
+    "synonyms_en": [],
+    "business_area": "Standard D365",
+    "processes": [],
+    "dataverse_logical": "recurringappointmentmaster",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/recurringappointmentmaster.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "account",
+    "display_it": "Account",
+    "synonyms_it": [
+      "account"
+    ],
+    "synonyms_en": [],
+    "business_area": "Standard D365",
+    "processes": [
+      "Elenco delle User Stories trattate",
+      "Next best product",
+      "Elementi comuni › Menu laterale",
+      "Elementi comuni › Collaborazione",
+      "Home – To-do list",
+      "Scheda cliente (account o contatto)",
+      "Scheda cliente (account o contatto) › Inserisci contatto da scheda cliente",
+      "Scheda cliente (account o contatto) › Inserisci lead da scheda cliente"
+    ],
+    "dataverse_logical": "account",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1"
+    ],
+    "file": "entities/account.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "businessunit",
+    "display_it": "Business Unit",
+    "synonyms_it": [
+      "business unit"
+    ],
+    "synonyms_en": [],
+    "business_area": "Standard D365",
+    "processes": [],
+    "dataverse_logical": "businessunit",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/businessunit.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_suggestedaction",
+    "display_it": "Azione suggerita",
+    "synonyms_it": [
+      "azione suggerita"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_suggestedaction",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_suggestedaction.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_dispatchingruleadditionalfields",
+    "display_it": "Campi aggiuntivi regola smistamento Lead",
+    "synonyms_it": [
+      "campi aggiuntivi regola smistamento lead"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_dispatchingruleadditionalfields",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_dispatchingruleadditionalfields.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_contactchannel",
+    "display_it": "Canale di Contatto",
+    "synonyms_it": [
+      "canale di contatto"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_contactchannel",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_contactchannel.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_brokermortgageloan",
+    "display_it": "Canale intermediario mutuo",
+    "synonyms_it": [
+      "canale intermediario mutuo"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_brokermortgageloan",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_brokermortgageloan.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_genericcontact",
+    "display_it": "Contatto generico",
+    "synonyms_it": [
+      "contatto generico"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_genericcontact",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_genericcontact.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "contact",
+    "display_it": "Contatto",
+    "synonyms_it": [
+      "contatto"
+    ],
+    "synonyms_en": [],
+    "business_area": "Standard D365",
+    "processes": [
+      "Obiettivi e valore atteso",
+      "Ruoli e responsabilità – Descrizione dettagliata",
+      "Fonti alimentanti – vista generale",
+      "Configurazioni di agenda",
+      "Riportafogliazioni",
+      "Tassonomia generale",
+      "Classificazione di lead per flusso di origine",
+      "Visualizzazione lead e suggerimenti, tempistiche di assegnazione/lavorazione e presa in carico"
+    ],
+    "dataverse_logical": "contact",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/contact.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_dispatchingrule",
+    "display_it": "Regola smistamento Lead",
+    "synonyms_it": [
+      "regola smistamento lead"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_dispatchingrule",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_dispatchingrule.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_configuration",
+    "display_it": "Configurazione",
+    "synonyms_it": [
+      "configurazione"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Ruoli e responsabilità – Descrizione dettagliata",
+      "Catalogo prodotti",
+      "Tassonomia generale",
+      "Fonti alimentanti – vista generale",
+      "Configurazioni di agenda",
+      "Visualizzazione propria agenda e filtri di visualizzazione",
+      "Dettagli appuntamento",
+      "Configurazioni di portafoglio retail"
+    ],
+    "dataverse_logical": "cai_configuration",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_configuration.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_conflict",
+    "display_it": "Conflitto",
+    "synonyms_it": [
+      "conflitto"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Configurazioni di agenda",
+      "Riportafogliazioni",
+      "Ruoli e responsabilità – Descrizione dettagliata",
+      "Pianificazione disponibilità"
+    ],
+    "dataverse_logical": "cai_conflict",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_conflict.md",
+    "source": "docs_analysis",
+    "is_custom": true,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_queueitemlead",
+    "display_it": "Elemento Coda Lead",
+    "synonyms_it": [
+      "elemento coda lead"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_queueitemlead",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_queueitemlead.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_leadoutcome",
+    "display_it": "Esito lead",
+    "synonyms_it": [
+      "esito lead"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Focus Lead mutui › Vista di dettaglio lead mutui"
+    ],
+    "dataverse_logical": "cai_leadoutcome",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1"
+    ],
+    "file": "entities/cai_leadoutcome.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_leadoutcomeactivity",
+    "display_it": "Esitazione",
+    "synonyms_it": [
+      "esitazione"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Tassonomia generale",
+      "Configurazioni di agenda",
+      "Dettagli appuntamento",
+      "Esitazione appuntamento",
+      "Visualizzazione lead e suggerimenti, tempistiche di assegnazione/lavorazione e presa in carico",
+      "Scheda lead e suggerimenti",
+      "Gestione lead e suggerimenti con esito “venduto”",
+      "Gestione lead e suggerimenti con esito “Fissa un appuntamento”"
+    ],
+    "dataverse_logical": "cai_leadoutcomeactivity",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_leadoutcomeactivity.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_productgroup",
+    "display_it": "Gruppo prodotto",
+    "synonyms_it": [
+      "gruppo prodotto"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Catalogo prodotti"
+    ],
+    "dataverse_logical": "cai_productgroup",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_productgroup.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "lead",
+    "display_it": "Lead",
+    "synonyms_it": [
+      "lead"
+    ],
+    "synonyms_en": [],
+    "business_area": "Standard D365",
+    "processes": [
+      "Contesto di business",
+      "Obiettivi e valore atteso",
+      "Principi guida e best practice",
+      "Ruoli e responsabilità – Descrizione dettagliata",
+      "Permessi, coni di visibilità e azioni consentite",
+      "Tassonomia generale",
+      "Fonti alimentanti – vista generale",
+      "Configurazioni di agenda"
+    ],
+    "dataverse_logical": "lead",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/lead.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_macrocategory",
+    "display_it": "Macrocategoria",
+    "synonyms_it": [
+      "macrocategoria"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_macrocategory",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_macrocategory.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_requestorigin",
+    "display_it": "Fonte Richiesta",
+    "synonyms_it": [
+      "fonte richiesta"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Elenco delle configurazioni lead gestite da Rete, regole associate e fonte prevista"
+    ],
+    "dataverse_logical": "cai_requestorigin",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1"
+    ],
+    "file": "entities/cai_requestorigin.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_macroproduct",
+    "display_it": "Macroprodotto",
+    "synonyms_it": [
+      "macroprodotto"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Definizione livelli di priorità lead in MVP0 (soluzione temporanea prima dell’implementazione del motore di prioritizzazione previsto in MVP successivi)"
+    ],
+    "dataverse_logical": "cai_macroproduct",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1"
+    ],
+    "file": "entities/cai_macroproduct.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_walletmembership",
+    "display_it": "Membro Portafoglio",
+    "synonyms_it": [
+      "membro portafoglio"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_walletmembership",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_walletmembership.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_legalform",
+    "display_it": "Natura Giuridica",
+    "synonyms_it": [
+      "natura giuridica"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_legalform",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_legalform.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_nextbestproduct",
+    "display_it": "Next best product",
+    "synonyms_it": [
+      "next best product"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Classificazione di lead per flusso di origine",
+      "Visualizzazione lead e suggerimenti, tempistiche di assegnazione/lavorazione e presa in carico",
+      "Next best product",
+      "Scheda lead e suggerimenti",
+      "Elenco delle configurazioni lead gestite da Rete, regole associate e fonte prevista",
+      "Visualizzazione lead e tempistiche di assegnazione/lavorazione e presa in carico"
+    ],
+    "dataverse_logical": "cai_nextbestproduct",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1"
+    ],
+    "file": "entities/cai_nextbestproduct.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_leadoutcomegoal",
+    "display_it": "Obiettivo Esito Lead",
+    "synonyms_it": [
+      "obiettivo esito lead"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_leadoutcomegoal",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_leadoutcomegoal.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_marketinggoal",
+    "display_it": "Obiettivo di marketing",
+    "synonyms_it": [
+      "obiettivo di marketing"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_marketinggoal",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_marketinggoal.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_wallet",
+    "display_it": "Portafoglio",
+    "synonyms_it": [
+      "portafoglio"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Obiettivi e valore atteso",
+      "Permessi, coni di visibilità e azioni consentite",
+      "Configurazioni di agenda",
+      "Ruoli e responsabilità – Descrizione dettagliata",
+      "Configurazioni di portafoglio retail",
+      "Riportafogliazioni",
+      "Interazione filtro FrEE e coni di visibilità su CRM in gestione lead",
+      "Visualizzazione lead e suggerimenti, tempistiche di assegnazione/lavorazione e presa in carico"
+    ],
+    "dataverse_logical": "cai_wallet",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_wallet.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_appointmentrequest",
+    "display_it": "Richiesta Appuntamento",
+    "synonyms_it": [
+      "richiesta appuntamento"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Classificazione di lead per flusso di origine",
+      "Visualizzazione lead e suggerimenti, tempistiche di assegnazione/lavorazione e presa in carico",
+      "Notifiche di gestione lead",
+      "Elenco delle configurazioni lead gestite da Rete, regole associate e fonte prevista",
+      "Visualizzazione dettagli appuntamento",
+      "Comunicazioni ai clienti – template NPU ed SMS"
+    ],
+    "dataverse_logical": "cai_appointmentrequest",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_appointmentrequest.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_product",
+    "display_it": "Prodotto",
+    "synonyms_it": [
+      "prodotto"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Ruoli e responsabilità – Descrizione dettagliata",
+      "Catalogo prodotti",
+      "Fonti alimentanti – vista generale",
+      "Visualizzazione propria agenda e filtri di visualizzazione",
+      "Dettagli appuntamento",
+      "Esitazione appuntamento",
+      "Classificazione di lead per flusso di origine",
+      "Visualizzazione lead e suggerimenti, tempistiche di assegnazione/lavorazione e presa in carico"
+    ],
+    "dataverse_logical": "cai_product",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_product.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_nboproduct",
+    "display_it": "Prodotto NBO",
+    "synonyms_it": [
+      "prodotto nbo"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_nboproduct",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_nboproduct.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_userprofile",
+    "display_it": "Profilo Utente",
+    "synonyms_it": [
+      "profilo utente"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [],
+    "dataverse_logical": "cai_userprofile",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_userprofile.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_modirole",
+    "display_it": "Ruolo Modi",
+    "synonyms_it": [
+      "ruolo modi"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Permessi, coni di visibilità e azioni consentite",
+      "Ruoli e responsabilità – Descrizione dettagliata",
+      "Visualizzazione dettagli appuntamento",
+      "Visualizzazione dettagli impegno"
+    ],
+    "dataverse_logical": "cai_modirole",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_modirole.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_segment",
+    "display_it": "Segmento",
+    "synonyms_it": [
+      "segmento"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Ruoli e responsabilità – Descrizione dettagliata",
+      "Configurazioni di portafoglio retail",
+      "Visualizzazione lead e suggerimenti, tempistiche di assegnazione/lavorazione e presa in carico",
+      "Definizione livelli di priorità lead in MVP0 (soluzione temporanea prima dell’implementazione del motore di prioritizzazione previsto in MVP successivi)",
+      "3La mia giornata",
+      "Vista lead e suggerimenti",
+      "Visualizzazione lead e tempistiche di assegnazione/lavorazione e presa in carico",
+      "Home – To-do list"
+    ],
+    "dataverse_logical": "cai_segment",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_segment.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "phonecall",
+    "display_it": "Telefonata",
+    "synonyms_it": [
+      "telefonata"
+    ],
+    "synonyms_en": [],
+    "business_area": "Standard D365",
+    "processes": [
+      "Configurazioni di agenda",
+      "Visualizzazione propria agenda e filtri di visualizzazione",
+      "Dettagli appuntamento",
+      "Scheda lead e suggerimenti",
+      "Gestione lead e suggerimenti con esito “venduto”",
+      "Gestione lead e suggerimenti con registrazione recapito di contatto non valido (indirizzi di recapito inesistenti)",
+      "Focus Lead mutui › Vista di dettaglio lead mutui",
+      "Pianificazione disponibilità › Appuntamento decontestualizzato (cliente da selezionare)"
+    ],
+    "dataverse_logical": "phonecall",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/phonecall.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_ownershiprelation",
+    "display_it": "Titolarità Rapporto",
+    "synonyms_it": [
+      "titolarità rapporto"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Configurazioni di agenda"
+    ],
+    "dataverse_logical": "cai_ownershiprelation",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_ownershiprelation.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_orgunit",
+    "display_it": "Unità organizzativa",
+    "synonyms_it": [
+      "unità organizzativa"
+    ],
+    "synonyms_en": [],
+    "business_area": "Retail / CRM",
+    "processes": [
+      "Permessi, coni di visibilità e azioni consentite",
+      "Configurazioni di portafoglio retail",
+      "Interazione filtro FrEE e coni di visibilità su CRM in gestione lead",
+      "Visualizzazione lead e suggerimenti, tempistiche di assegnazione/lavorazione e presa in carico",
+      "3La mia giornata",
+      "Vista lead e suggerimenti",
+      "Creazione nuova lead spontanea di cliente o ex cliente (anagrafato su anagrafe ordinaria o prospect)",
+      "Visualizzazione lead e tempistiche di assegnazione/lavorazione e presa in carico"
+    ],
+    "dataverse_logical": "cai_orgunit",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_orgunit.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "systemuser",
+    "display_it": "Utente",
+    "synonyms_it": [
+      "utente"
+    ],
+    "synonyms_en": [],
+    "business_area": "Standard D365",
+    "processes": [
+      "Principi guida e best practice",
+      "Configurazioni di agenda",
+      "Visualizzazione propria agenda e filtri di visualizzazione",
+      "Dettagli appuntamento",
+      "Interazione filtro FrEE e coni di visibilità su CRM in gestione lead",
+      "Visualizzazione lead e suggerimenti, tempistiche di assegnazione/lavorazione e presa in carico",
+      "Fonti alimentanti – vista generale",
+      "Elementi comuni › Collaborazione"
+    ],
+    "dataverse_logical": "systemuser",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/systemuser.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_leadoutcomeactivitycssession",
+    "display_it": "SC Sessione di Esitazione",
+    "synonyms_it": [
+      "sc sessione di esitazione"
+    ],
+    "synonyms_en": [],
+    "business_area": "Servizio Clienti",
+    "processes": [],
+    "dataverse_logical": "cai_leadoutcomeactivitycssession",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_leadoutcomeactivitycssession.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_leadoutcomeactivitycssessionparams",
+    "display_it": "SC Parametri della Sessione di Esitazione",
+    "synonyms_it": [
+      "sc parametri della sessione di esitazione"
+    ],
+    "synonyms_en": [],
+    "business_area": "Servizio Clienti",
+    "processes": [],
+    "dataverse_logical": "cai_leadoutcomeactivitycssessionparams",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_leadoutcomeactivitycssessionparams.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_familyunit",
+    "display_it": "Nucleo",
+    "synonyms_it": [
+      "nucleo"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [
+      "Ruoli e responsabilità – Descrizione dettagliata",
+      "Focus Lead mutui › Vista di dettaglio lead mutui"
+    ],
+    "dataverse_logical": "cai_familyunit",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_familyunit.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_familyunitmember",
+    "display_it": "Componente nucleo",
+    "synonyms_it": [
+      "componente nucleo"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [
+      "Focus Lead mutui › Vista di dettaglio lead mutui"
+    ],
+    "dataverse_logical": "cai_familyunitmember",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1"
+    ],
+    "file": "entities/cai_familyunitmember.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_familyunitmemberrelationship",
+    "display_it": "Legame componenti nucleo",
+    "synonyms_it": [
+      "legame componenti nucleo"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_familyunitmemberrelationship",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_familyunitmemberrelationship.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_event",
+    "display_it": "Evento",
+    "synonyms_it": [
+      "evento"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [
+      "Gestione lead con riprogrammazione proposta di appuntamento prenotato",
+      "Focus Lead mutui › Lead mutui: specifiche funzionali e di processo",
+      "Focus Lead mutui › Vista di dettaglio lead mutui",
+      "Elenco delle configurazioni lead gestite da Rete, regole associate e fonte prevista",
+      "Pianificazione disponibilità",
+      "Pianificazione disponibilità › Appuntamento decontestualizzato (cliente da selezionare)",
+      "Modifica appuntamento",
+      "Cancella appuntamento"
+    ],
+    "dataverse_logical": "cai_event",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_event.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_eventattendant",
+    "display_it": "Accompagnatore evento",
+    "synonyms_it": [
+      "accompagnatore evento"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_eventattendant",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_eventattendant.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_hierarchicallevel",
+    "display_it": "Livello gerarchico",
+    "synonyms_it": [
+      "livello gerarchico"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [
+      "Permessi, coni di visibilità e azioni consentite",
+      "Ruoli e responsabilità – Descrizione dettagliata",
+      "Configurazioni di agenda",
+      "Visualizzazione agenda di collaboratori e filtri di visualizzazione › Pagina agende dei colleghi e processi correlati"
+    ],
+    "dataverse_logical": "cai_hierarchicallevel",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_hierarchicallevel.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_coverageteam",
+    "display_it": "Coverage team",
+    "synonyms_it": [
+      "coverage team"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_coverageteam",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_coverageteam.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_coverageteam",
+    "display_it": "Appuntamento Coverage team",
+    "synonyms_it": [
+      "appuntamento coverage team"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_coverageteam",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_coverageteam.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_qualitativeinfospersonalinfo",
+    "display_it": "Info qualitative - Info personale",
+    "synonyms_it": [
+      "info qualitative - info personale"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_qualitativeinfospersonalinfo",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_qualitativeinfospersonalinfo.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_qualitativeinfosrelationshiptrend",
+    "display_it": "Info qualitative - Andamento relazione",
+    "synonyms_it": [
+      "info qualitative - andamento relazione"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_qualitativeinfosrelationshiptrend",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_qualitativeinfosrelationshiptrend.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_qualitativeinfosassets",
+    "display_it": "Info qualitative - Patrimonio",
+    "synonyms_it": [
+      "info qualitative - patrimonio"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_qualitativeinfosassets",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_qualitativeinfosassets.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_qualitativeinfosestateplanning",
+    "display_it": "Info qualitative - Pianificazione successoria",
+    "synonyms_it": [
+      "info qualitative - pianificazione successoria"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_qualitativeinfosestateplanning",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_qualitativeinfosestateplanning.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_customerinterview",
+    "display_it": "Customer interview",
+    "synonyms_it": [
+      "customer interview"
+    ],
+    "synonyms_en": [],
+    "business_area": "Business Dev Intelligence",
+    "processes": [],
+    "dataverse_logical": "cai_customerinterview",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_customerinterview.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_customerinterviewtopic",
+    "display_it": "Tema Customer interview",
+    "synonyms_it": [
+      "tema customer interview"
+    ],
+    "synonyms_en": [],
+    "business_area": "Business Dev Intelligence",
+    "processes": [],
+    "dataverse_logical": "cai_customerinterviewtopic",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_customerinterviewtopic.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_customerinterviewcoverageteam",
+    "display_it": "Customer interview - Coverage team",
+    "synonyms_it": [
+      "customer interview - coverage team"
+    ],
+    "synonyms_en": [],
+    "business_area": "Business Dev Intelligence",
+    "processes": [],
+    "dataverse_logical": "cai_customerinterviewcoverageteam",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_customerinterviewcoverageteam.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_customerinterviewpointofcontact",
+    "display_it": "Referente Customer interview",
+    "synonyms_it": [
+      "referente customer interview"
+    ],
+    "synonyms_en": [],
+    "business_area": "Business Dev Intelligence",
+    "processes": [],
+    "dataverse_logical": "cai_customerinterviewpointofcontact",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_customerinterviewpointofcontact.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_customerinterviewpartecipant",
+    "display_it": "Partecipante Customer interview",
+    "synonyms_it": [
+      "partecipante customer interview"
+    ],
+    "synonyms_en": [],
+    "business_area": "Business Dev Intelligence",
+    "processes": [],
+    "dataverse_logical": "cai_customerinterviewpartecipant",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_customerinterviewpartecipant.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_group",
+    "display_it": "Gruppo",
+    "synonyms_it": [
+      "gruppo"
+    ],
+    "synonyms_en": [],
+    "business_area": "Business Dev Intelligence",
+    "processes": [
+      "Catalogo prodotti",
+      "Ruoli e responsabilità – Descrizione dettagliata",
+      "Dispatching automatico di lead"
+    ],
+    "dataverse_logical": "cai_group",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_group.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_example",
+    "display_it": "Nome entità",
+    "synonyms_it": [
+      "nome entità"
+    ],
+    "synonyms_en": [],
+    "business_area": "Business Dev Intelligence",
+    "processes": [],
+    "dataverse_logical": "cai_example",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_example.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_opportunityoutcome",
+    "display_it": "Esito opportunità",
+    "synonyms_it": [
+      "esito opportunità"
+    ],
+    "synonyms_en": [],
+    "business_area": "Business Dev Intelligence",
+    "processes": [],
+    "dataverse_logical": "cai_opportunityoutcome",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_opportunityoutcome.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_opportunitycoverageteam",
+    "display_it": "Opportunità - Coverage team",
+    "synonyms_it": [
+      "opportunità - coverage team"
+    ],
+    "synonyms_en": [],
+    "business_area": "Business Dev Intelligence",
+    "processes": [],
+    "dataverse_logical": "cai_opportunitycoverageteam",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_opportunitycoverageteam.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_accountplan",
+    "display_it": "BDI Account plan",
+    "synonyms_it": [
+      "bdi account plan"
+    ],
+    "synonyms_en": [],
+    "business_area": "Business Dev Intelligence",
+    "processes": [],
+    "dataverse_logical": "cai_accountplan",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_accountplan.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_accountplannote",
+    "display_it": "BDI Note Account Plan",
+    "synonyms_it": [
+      "bdi note account plan"
+    ],
+    "synonyms_en": [],
+    "business_area": "Business Dev Intelligence",
+    "processes": [],
+    "dataverse_logical": "cai_accountplannote",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_accountplannote.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_example",
+    "display_it": "Nome entità",
+    "synonyms_it": [
+      "nome entità"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_example",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_example.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_example",
+    "display_it": "Nome entità",
+    "synonyms_it": [
+      "nome entità"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_example",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_example.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_example",
+    "display_it": "Nome entità",
+    "synonyms_it": [
+      "nome entità"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_example",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_example.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_example",
+    "display_it": "Nome entità",
+    "synonyms_it": [
+      "nome entità"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_example",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_example.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_example",
+    "display_it": "Nome entità",
+    "synonyms_it": [
+      "nome entità"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_example",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_example.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_example",
+    "display_it": "Nome entità",
+    "synonyms_it": [
+      "nome entità"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_example",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_example.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_pingprofile",
+    "display_it": "Profilo PING",
+    "synonyms_it": [
+      "profilo ping"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [
+      "Permessi, coni di visibilità e azioni consentite",
+      "Ruoli e responsabilità – Descrizione dettagliata"
+    ],
+    "dataverse_logical": "cai_pingprofile",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx",
+      "AF Retail - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "entities/cai_pingprofile.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "entity",
+    "logical": "cai_example",
+    "display_it": "Nome entità",
+    "synonyms_it": [
+      "nome entità"
+    ],
+    "synonyms_en": [],
+    "business_area": "Private Banking",
+    "processes": [],
+    "dataverse_logical": "cai_example",
+    "doc_sources": [
+      "Datamodel_D365 1.xlsx"
+    ],
+    "file": "entities/cai_example.md",
+    "source": "docs_analysis",
+    "is_custom": false,
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "process",
+    "slug": "gestione-lead",
+    "title": "Gestione Lead e Suggerimenti",
+    "synonyms_it": [
+      "gestione lead",
+      "vista lead",
+      "scheda lead",
+      "suggerimento"
+    ],
+    "entities_involved": [
+      "lead",
+      "cai_leadoutcomeactivity",
+      "cai_leadoutcome",
+      "account",
+      "contact"
+    ],
+    "doc_sources": [
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1"
+    ],
+    "file": "processes/gestione-lead.md",
+    "source": "docs_analysis",
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "process",
+    "slug": "esitazione",
+    "title": "Esitazione Lead",
+    "synonyms_it": [
+      "esitazione",
+      "esito lead",
+      "sessione di esitazione",
+      "esito"
+    ],
+    "entities_involved": [
+      "cai_leadoutcomeactivity",
+      "lead",
+      "cai_leadoutcome",
+      "cai_leadoutcomesessionparams"
+    ],
+    "doc_sources": [
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "processes/esitazione.md",
+    "source": "docs_analysis",
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "process",
+    "slug": "appuntamenti",
+    "title": "Gestione Appuntamenti",
+    "synonyms_it": [
+      "appuntamento",
+      "richiesta appuntamento",
+      "prenotazione",
+      "appuntamento ricorrente"
+    ],
+    "entities_involved": [
+      "appointment",
+      "recurringappointmentmaster",
+      "cai_appointmentrequest"
+    ],
+    "doc_sources": [
+      "AF Servizio clienti- MVP0_Sprint2",
+      "AF Retail - MVP0_Sprint1",
+      "AF servizio clienti - MVP0_Sprint1",
+      "AF Retail - MVP0_Sprint2"
+    ],
+    "file": "processes/appuntamenti.md",
+    "source": "docs_analysis",
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "process",
+    "slug": "retail",
+    "title": "Retail CRM",
+    "synonyms_it": [
+      "retail",
+      "portafoglio",
+      "campagna",
+      "anagrafe campagna"
+    ],
+    "entities_involved": [
+      "lead",
+      "account",
+      "cai_portfolio",
+      "cai_portfoliomember",
+      "cai_campaign"
+    ],
+    "doc_sources": [
+      "AF Retail - MVP0_Sprint1"
+    ],
+    "file": "processes/retail.md",
+    "source": "docs_analysis",
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "process",
+    "slug": "servizio-clienti",
+    "title": "Servizio Clienti (SC)",
+    "synonyms_it": [
+      "servizio clienti",
+      "sc sessione",
+      "sessione di esitazione"
+    ],
+    "entities_involved": [
+      "cai_leadoutcomesession",
+      "cai_leadoutcomesessionparams",
+      "contact",
+      "lead"
+    ],
+    "doc_sources": [
+      "AF servizio clienti - MVP0_Sprint1"
+    ],
+    "file": "processes/servizio-clienti.md",
+    "source": "docs_analysis",
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "process",
+    "slug": "private-banking",
+    "title": "Private Banking (PRV)",
+    "synonyms_it": [
+      "private",
+      "nucleo",
+      "coverage team",
+      "evento prv"
+    ],
+    "entities_involved": [
+      "cai_familyunit",
+      "cai_familyunitmember",
+      "cai_coverageteam",
+      "cai_event"
+    ],
+    "doc_sources": [],
+    "file": "processes/private-banking.md",
+    "source": "docs_analysis",
+    "generated": "2026-05-07"
+  },
+  {
+    "type": "process",
+    "slug": "business-dev-intelligence",
+    "title": "Business Dev Intelligence (BDI)",
+    "synonyms_it": [
+      "bdi",
+      "customer interview",
+      "account plan",
+      "opportunità bdi"
+    ],
+    "entities_involved": [
+      "cai_customerinterview",
+      "cai_accountplan",
+      "cai_group"
+    ],
+    "doc_sources": [],
+    "file": "processes/business-dev-intelligence.md",
+    "source": "docs_analysis",
+    "generated": "2026-05-07"
+  }
+]
