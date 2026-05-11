@@ -1,0 +1,57 @@
+package it.dataverse.skills.sintaura.tests.apistub.appointment.core;
+
+import java.util.List;
+
+public final class IntegrationPipeline<TIn, TOut> {
+
+    private final Provider<TIn> provider;
+    private final Validator<TIn> validator;
+    private final Converter<TIn, TOut> converter;
+    private final Publisher<TOut> publisher;
+    private final Logger logger;
+
+    public IntegrationPipeline(
+            Provider<TIn> provider,
+            Validator<TIn> validator,
+            Converter<TIn, TOut> converter,
+            Publisher<TOut> publisher,
+            Logger logger) {
+        this.provider = provider;
+        this.validator = validator;
+        this.converter = converter;
+        this.publisher = publisher;
+        this.logger = logger;
+    }
+
+    public PipelineResult run() throws Exception {
+        logger.info("pipeline: begin");
+
+        logger.info("step=fetch begin");
+        List<TIn> inputs = provider.fetch();
+        int total = inputs == null ? 0 : inputs.size();
+        logger.info("step=fetch end count=" + total);
+
+        int processed = 0, skipped = 0, failed = 0;
+        if (inputs != null) {
+            for (TIn in : inputs) {
+                try {
+                    ValidationResult v = validator.validate(in);
+                    if (!v.isValid()) {
+                        logger.warn("invalid: " + v.errors());
+                        skipped++;
+                        continue;
+                    }
+                    TOut out = converter.convert(in);
+                    publisher.publish(out);
+                    processed++;
+                } catch (Exception e) {
+                    logger.error("record failed: " + e.getMessage());
+                    failed++;
+                }
+            }
+        }
+
+        logger.info("pipeline: end processed=" + processed + " skipped=" + skipped + " failed=" + failed);
+        return new PipelineResult(processed, skipped, failed);
+    }
+}

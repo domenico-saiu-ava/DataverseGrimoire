@@ -1,0 +1,24 @@
+package it.dataverse.skills.sintaura.tests.apistub.appointment.core;
+
+public abstract class AbstractLoggingValidator<T> implements Validator<T> {
+
+    protected final Logger logger;
+
+    protected AbstractLoggingValidator(Logger logger) {
+        this.logger = logger;
+    }
+
+    @Override
+    public final ValidationResult validate(T input) {
+        logger.debug("validate: begin");
+        ValidationResult result = doValidate(input);
+        if (result.isValid()) {
+            logger.debug("validate: ok");
+        } else {
+            logger.warn("validate: invalid " + result.errors());
+        }
+        return result;
+    }
+
+    protected abstract ValidationResult doValidate(T input);
+}

@@ -14,18 +14,18 @@
 
 ## Risultati per query
 
-| # | Entità | Stato HTTP | Record | Tempo | Esito |
-|---|--------|-----------|--------|-------|-------|
-| 1 | Agenda preferita | 200 | 3 | 352 ms | ✅ |
-| 2 | Argomento (cai_argument) | 200 | 3 | 118 ms | ✅ |
-| 3 | Campi regola smist. | 200 | 0 | 113 ms | ✅ |
-| 4 | Prodotto (cai_product) | 200 | 3 | 126 ms | ✅ |
-| 5 | PRV Evento | 404 | — | 74 ms | ❌ |
-| 6 | Richiesta appuntamento | 200 | 3 | 98 ms | ✅ |
-| 7 | Natura Giuridica | 200 | 3 | 87 ms | ✅ |
-| 8 | Gruppo prodotto | 200 | 3 | 95 ms | ✅ |
-| 9 | Macro categoria | 200 | 3 | 77 ms | ✅ |
-| 10 | Business Unit (BusinessUnit) | 200 | 3 | 76 ms | ✅ |
+| #   | Entità                       | Stato HTTP | Record | Tempo  | Esito |
+| --- | ---------------------------- | ---------- | ------ | ------ | ----- |
+| 1   | Agenda preferita             | 200        | 3      | 352 ms | ✅     |
+| 2   | Argomento (cai_argument)     | 200        | 3      | 118 ms | ✅     |
+| 3   | Campi regola smist.          | 200        | 0      | 113 ms | ✅     |
+| 4   | Prodotto (cai_product)       | 200        | 3      | 126 ms | ✅     |
+| 5   | PRV Evento                   | 404        | —      | 74 ms  | ❌     |
+| 6   | Richiesta appuntamento       | 200        | 3      | 98 ms  | ✅     |
+| 7   | Natura Giuridica             | 200        | 3      | 87 ms  | ✅     |
+| 8   | Gruppo prodotto              | 200        | 3      | 95 ms  | ✅     |
+| 9   | Macro categoria              | 200        | 3      | 77 ms  | ✅     |
+| 10  | Business Unit (BusinessUnit) | 200        | 3      | 76 ms  | ✅     |
 
 ---
 

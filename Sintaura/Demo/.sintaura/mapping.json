@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "description": "Per-project override for the appointment+account stub. The only entity in this project carrying a 'name' field is Account, so we override the in-skill rule (which would emit a person name) to a company name.",
+  "mappings": [
+    { "pattern": "^(fullname|name|yominame|yomifullname)$", "datafaker": "company().name()" }
+  ]
+}

@@ -1,0 +1,26 @@
+package {{PACKAGE_BASE}};
+
+import {{PACKAGE_BASE}}.core.AbstractLoggingPublisher;
+import {{PACKAGE_BASE}}.core.Logger;
+import {{PACKAGE_BASE}}.core.Publisher;
+
+public class {{ENTITY_NAME}}Publisher extends AbstractLoggingPublisher<{{ENTITY_NAME}}Output> {
+
+    @SuppressWarnings("unused") // kept for opt-in cascade publish; see doPublish()
+    private final Publisher<{{CHILD_NAME}}Output> {{CHILD_VAR}}Publisher;
+
+    public {{ENTITY_NAME}}Publisher(Logger logger, Publisher<{{CHILD_NAME}}Output> {{CHILD_VAR}}Publisher) {
+        super(logger);
+        this.{{CHILD_VAR}}Publisher = {{CHILD_VAR}}Publisher;
+    }
+
+    @Override
+    protected void doPublish({{ENTITY_NAME}}Output item) throws Exception {
+        // TODO: publish the root {{ENTITY_NAME}}Output
+        //
+        // To cascade-publish the expanded child, uncomment:
+        // if (item.get{{CHILD_NAME}}Output() != null) {
+        //     {{CHILD_VAR}}Publisher.publish(item.get{{CHILD_NAME}}Output());
+        // }
+    }
+}

@@ -1,0 +1,42 @@
+package {{PACKAGE_BASE}};
+
+import {{PACKAGE_BASE}}.core.AbstractLoggingValidator;
+import {{PACKAGE_BASE}}.core.Logger;
+import {{PACKAGE_BASE}}.core.ValidationResult;
+import {{PACKAGE_BASE}}.core.Validator;
+import {{ENTITY_MODEL_FQN}};
+import {{CHILD_MODEL_FQN}};
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class {{ENTITY_NAME}}Validator extends AbstractLoggingValidator<{{ENTITY_NAME}}> {
+
+    private static final String NAV_{{CHILD_NAV_PROPERTY_UPPER}} = "{{CHILD_NAV_PROPERTY}}";
+
+    private final Validator<{{CHILD_NAME}}> {{CHILD_VAR}}Validator;
+
+    public {{ENTITY_NAME}}Validator(Logger logger, Validator<{{CHILD_NAME}}> {{CHILD_VAR}}Validator) {
+        super(logger);
+        this.{{CHILD_VAR}}Validator = {{CHILD_VAR}}Validator;
+    }
+
+    @Override
+    protected ValidationResult doValidate({{ENTITY_NAME}} input) {
+        List<String> errors = new ArrayList<>();
+
+        // TODO: validation rules on {{ENTITY_NAME}} own fields
+
+        {{CHILD_NAME}} {{CHILD_VAR}} = input.{{CHILD_GETTER}}();
+        if ({{CHILD_VAR}} != null) {
+            ValidationResult childResult = {{CHILD_VAR}}Validator.validate({{CHILD_VAR}});
+            if (!childResult.isValid()) {
+                for (String err : childResult.errors()) {
+                    errors.add(NAV_{{CHILD_NAV_PROPERTY_UPPER}} + "." + err);
+                }
+            }
+        }
+
+        return errors.isEmpty() ? ValidationResult.ok() : ValidationResult.fail(errors);
+    }
+}

@@ -1,0 +1,15 @@
+package {{PACKAGE_BASE}};
+
+/**
+ * Output model for the {{ENTITY_NAME}} entity. Holds an optional nested
+ * {{CHILD_NAME}}Output populated by {{ENTITY_NAME}}Converter from the
+ * {{CHILD_NAV_PROPERTY}} $expand. (Repeat the field block per child for N>1.)
+ */
+public class {{ENTITY_NAME}}Output {
+
+    // TODO: add output fields for {{ENTITY_NAME}}
+
+    private {{CHILD_NAME}}Output {{CHILD_VAR}}Output;
+    public {{CHILD_NAME}}Output get{{CHILD_NAME}}Output()              { return {{CHILD_VAR}}Output; }
+    public void set{{CHILD_NAME}}Output({{CHILD_NAME}}Output v)        { this.{{CHILD_VAR}}Output = v; }
+}

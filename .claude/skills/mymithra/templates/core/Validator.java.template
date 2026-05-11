@@ -1,0 +1,5 @@
+package {{PACKAGE_BASE}}.core;
+
+public interface Validator<T> {
+    ValidationResult validate(T input);
+}

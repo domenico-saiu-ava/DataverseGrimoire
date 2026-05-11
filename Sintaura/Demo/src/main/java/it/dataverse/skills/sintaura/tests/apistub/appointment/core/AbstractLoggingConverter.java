@@ -1,0 +1,20 @@
+package it.dataverse.skills.sintaura.tests.apistub.appointment.core;
+
+public abstract class AbstractLoggingConverter<TIn, TOut> implements Converter<TIn, TOut> {
+
+    protected final Logger logger;
+
+    protected AbstractLoggingConverter(Logger logger) {
+        this.logger = logger;
+    }
+
+    @Override
+    public final TOut convert(TIn input) {
+        logger.debug("convert: begin");
+        TOut result = doConvert(input);
+        logger.debug("convert: end");
+        return result;
+    }
+
+    protected abstract TOut doConvert(TIn input);
+}

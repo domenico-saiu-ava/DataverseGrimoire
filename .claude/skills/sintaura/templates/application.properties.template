@@ -1,0 +1,17 @@
+# Sintaura integration-test configuration
+#
+# Used by {Entity}ProviderIntegrationTest to call a real Dataverse environment.
+# Resolution order (first non-blank wins):
+#   1. -D system properties      : -Ddataverse.baseUrl=... -Ddataverse.accessToken=...
+#   2. environment variables     : DATAVERSE_BASE_URL, DATAVERSE_ACCESS_TOKEN
+#   3. this file (uncomment below)
+#
+# When neither baseUrl nor accessToken is provided, the integration test is
+# silently skipped via JUnit Assumptions — the build stays green.
+#
+# Example:
+# dataverse.baseUrl=https://orgXXXXXXXX.crm4.dynamics.com
+# dataverse.accessToken=eyJ0eXAiOiJKV1QiLCJhbGciOi...
+
+dataverse.baseUrl=
+dataverse.accessToken=

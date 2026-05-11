@@ -1,0 +1,39 @@
+package {{PACKAGE_BASE}};
+
+import {{PACKAGE_BASE}}.core.IntegrationPipeline;
+import {{PACKAGE_BASE}}.core.NullLogger;
+import {{PACKAGE_BASE}}.core.PipelineResult;
+import {{PACKAGE_BASE}}.core.Provider;
+import {{ENTITY_MODEL_FQN}};
+import {{CHILD_MODEL_FQN}};
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+@ExtendWith(MockitoExtension.class)
+class {{ENTITY_NAME}}IntegrationTest {
+
+    @Mock Provider<{{ENTITY_NAME}}> provider;
+
+    @Test
+    void shouldRunWiredPipelineEndToEndWithStubProvider() throws Exception {
+        {{ENTITY_NAME}} record = new {{ENTITY_NAME}}();
+        record.{{CHILD_SETTER}}(new {{CHILD_NAME}}());
+        when(provider.fetch()).thenReturn(List.of(record));
+
+        IntegrationPipeline<{{ENTITY_NAME}}, {{ENTITY_NAME}}Output> pipeline =
+            {{ENTITY_NAME}}Integration.buildPipeline(provider, new NullLogger());
+
+        PipelineResult r = pipeline.run();
+
+        assertEquals(1, r.processed());
+        assertEquals(0, r.skipped());
+        assertEquals(0, r.failed());
+    }
+}

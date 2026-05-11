@@ -1,0 +1,71 @@
+package {{PACKAGE}}.providers;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.CollectionType;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import {{PACKAGE}}.core.Provider;
+import {{PACKAGE}}.models.{{ENTITY_NAME}};
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.List;
+
+public final class {{ENTITY_NAME}}Provider implements Provider<{{ENTITY_NAME}}> {
+
+    public static final String URL_PATH = "{{URL_PATH}}";
+    public static final String DEFAULT_QUERY = "{{DEFAULT_QUERY}}";
+
+    private static final ObjectMapper MAPPER = new ObjectMapper().registerModule(new JavaTimeModule());
+
+    private final URI baseUri;
+    private final String accessToken;
+    private final HttpClient client;
+
+    public {{ENTITY_NAME}}Provider(URI baseUri) {
+        this(baseUri, null);
+    }
+
+    public {{ENTITY_NAME}}Provider(URI baseUri, String accessToken) {
+        this.baseUri = baseUri;
+        this.accessToken = accessToken;
+        this.client = HttpClient.newHttpClient();
+    }
+
+    public List<{{ENTITY_NAME}}> findAll() throws IOException, InterruptedException {
+        return find(DEFAULT_QUERY);
+    }
+
+    @Override
+    public List<{{ENTITY_NAME}}> fetch() throws Exception {
+        return findAll();
+    }
+
+    public List<{{ENTITY_NAME}}> find(String odataQuery) throws IOException, InterruptedException {
+        URI target;
+        try {
+            target = new URI(baseUri.getScheme(), null, baseUri.getHost(), baseUri.getPort(),
+                URL_PATH, (odataQuery == null || odataQuery.isEmpty()) ? null : odataQuery, null);
+        } catch (java.net.URISyntaxException e) {
+            throw new IOException("Invalid URI components", e);
+        }
+        HttpRequest.Builder builder = HttpRequest.newBuilder(target)
+            .header("Accept", "application/json");
+        if (accessToken != null && !accessToken.isBlank()) {
+            builder.header("Authorization", "Bearer " + accessToken);
+        }
+        HttpRequest request = builder.GET().build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        if (response.statusCode() != 200) {
+            throw new IOException("Unexpected status " + response.statusCode() + " from " + target);
+        }
+        var node = MAPPER.readTree(response.body()).get("value");
+        if (node == null || !node.isArray()) {
+            throw new IOException("Response missing 'value' array envelope");
+        }
+        CollectionType type = MAPPER.getTypeFactory().constructCollectionType(List.class, {{ENTITY_NAME}}.class);
+        return MAPPER.readValue(node.traverse(MAPPER), type);
+    }
+}

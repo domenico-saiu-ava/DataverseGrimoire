@@ -1,0 +1,42 @@
+package {{PACKAGE_BASE}};
+
+import {{PACKAGE_BASE}}.core.Logger;
+import {{PACKAGE_BASE}}.core.Publisher;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.contains;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
+
+@ExtendWith(MockitoExtension.class)
+class {{ENTITY_NAME}}PublisherTest {
+
+    @Mock Publisher<{{CHILD_NAME}}Output> {{CHILD_VAR}}Publisher;
+    @Mock Logger logger;
+
+    @Test
+    void shouldLogRootPublishViaAbstractLogging() throws Exception {
+        var sut = new {{ENTITY_NAME}}Publisher(logger, {{CHILD_VAR}}Publisher);
+        {{ENTITY_NAME}}Output out = new {{ENTITY_NAME}}Output();
+
+        sut.publish(out);
+
+        verify(logger).info(contains("publish:"));
+    }
+
+    @Test
+    void shouldNotCascadePublishToChildPublisherByDefault() throws Exception {
+        var sut = new {{ENTITY_NAME}}Publisher(logger, {{CHILD_VAR}}Publisher);
+        {{ENTITY_NAME}}Output out = new {{ENTITY_NAME}}Output();
+        out.set{{CHILD_NAME}}Output(new {{CHILD_NAME}}Output());
+
+        sut.publish(out);
+
+        // cascade is opt-in: doPublish() body has the call commented out
+        verify({{CHILD_VAR}}Publisher, never()).publish(any());
+    }
+}

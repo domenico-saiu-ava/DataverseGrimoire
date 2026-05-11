@@ -4,12 +4,12 @@
 
 ## Riepilogo
 
-| Categoria | N° entità | Note |
-|-----------|-----------|------|
-| ✅ Allineate (presenti in entrambi, nessun campo mancante) | 21 | — |
-| ⚠️ Con gap di campi (presenti in entrambi, campi AF assenti dal wiki tecnico) | 23 | 303 campi totali mancanti |
-| ❌ Assenti dal wiki tecnico (richiedono `npm run custom`) | 21 | Tutte `cai_*` custom |
-| **Totale entità analizzate** | **66** | |
+| Categoria                                                                     | N° entità | Note                      |
+| ----------------------------------------------------------------------------- | --------- | ------------------------- |
+| ✅ Allineate (presenti in entrambi, nessun campo mancante)                     | 21        | —                         |
+| ⚠️ Con gap di campi (presenti in entrambi, campi AF assenti dal wiki tecnico) | 23        | 303 campi totali mancanti |
+| ❌ Assenti dal wiki tecnico (richiedono `npm run custom`)                      | 21        | Tutte `cai_*` custom      |
+| **Totale entità analizzate**                                                  | **66**    |                           |
 
 > **Azione consigliata:** eseguire `npm run custom -- --url https://<env>.crm4.dynamics.com` per popolare `wiki/custom/`. Dopo l'ingestione la maggior parte dei gap di campi `cai_*` si chiuderà automaticamente.
 

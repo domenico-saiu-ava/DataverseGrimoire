@@ -1,0 +1,31 @@
+package {{PACKAGE_BASE}};
+
+import {{PACKAGE_BASE}}.core.AbstractLoggingConverter;
+import {{PACKAGE_BASE}}.core.Converter;
+import {{PACKAGE_BASE}}.core.Logger;
+import {{ENTITY_MODEL_FQN}};
+import {{CHILD_MODEL_FQN}};
+
+public class {{ENTITY_NAME}}Converter extends AbstractLoggingConverter<{{ENTITY_NAME}}, {{ENTITY_NAME}}Output> {
+
+    private final Converter<{{CHILD_NAME}}, {{CHILD_NAME}}Output> {{CHILD_VAR}}Converter;
+
+    public {{ENTITY_NAME}}Converter(Logger logger, Converter<{{CHILD_NAME}}, {{CHILD_NAME}}Output> {{CHILD_VAR}}Converter) {
+        super(logger);
+        this.{{CHILD_VAR}}Converter = {{CHILD_VAR}}Converter;
+    }
+
+    @Override
+    protected {{ENTITY_NAME}}Output doConvert({{ENTITY_NAME}} input) {
+        {{ENTITY_NAME}}Output out = new {{ENTITY_NAME}}Output();
+
+        // TODO: map {{ENTITY_NAME}} own fields to {{ENTITY_NAME}}Output
+
+        {{CHILD_NAME}} {{CHILD_VAR}} = input.{{CHILD_GETTER}}();
+        if ({{CHILD_VAR}} != null) {
+            out.set{{CHILD_NAME}}Output({{CHILD_VAR}}Converter.convert({{CHILD_VAR}}));
+        }
+
+        return out;
+    }
+}

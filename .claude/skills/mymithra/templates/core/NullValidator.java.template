@@ -1,0 +1,8 @@
+package {{PACKAGE_BASE}}.core;
+
+public final class NullValidator<T> implements Validator<T> {
+    @Override
+    public ValidationResult validate(T input) {
+        return ValidationResult.ok();
+    }
+}

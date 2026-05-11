@@ -1,0 +1,54 @@
+package {{PACKAGE_BASE}};
+
+import {{PACKAGE_BASE}}.core.Converter;
+import {{PACKAGE_BASE}}.core.Logger;
+import {{ENTITY_MODEL_FQN}};
+import {{CHILD_MODEL_FQN}};
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.same;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+@ExtendWith(MockitoExtension.class)
+class {{ENTITY_NAME}}ConverterTest {
+
+    @Mock Converter<{{CHILD_NAME}}, {{CHILD_NAME}}Output> {{CHILD_VAR}}Converter;
+    @Mock Logger logger;
+
+    @Test
+    void shouldDelegateTo{{CHILD_NAME}}ConverterAndStoreResultOnOutput() {
+        var sut = new {{ENTITY_NAME}}Converter(logger, {{CHILD_VAR}}Converter);
+        {{CHILD_NAME}} {{CHILD_VAR}} = new {{CHILD_NAME}}();
+        {{ENTITY_NAME}} input = new {{ENTITY_NAME}}();
+        input.{{CHILD_SETTER}}({{CHILD_VAR}});
+        {{CHILD_NAME}}Output converted{{CHILD_NAME}} = new {{CHILD_NAME}}Output();
+        when({{CHILD_VAR}}Converter.convert(any())).thenReturn(converted{{CHILD_NAME}});
+
+        {{ENTITY_NAME}}Output out = sut.convert(input);
+
+        assertNotNull(out);
+        verify({{CHILD_VAR}}Converter).convert(same({{CHILD_VAR}}));
+        assertSame(converted{{CHILD_NAME}}, out.get{{CHILD_NAME}}Output());
+    }
+
+    @Test
+    void shouldNotInvoke{{CHILD_NAME}}ConverterWhenExpandedEntityIsNull() {
+        var sut = new {{ENTITY_NAME}}Converter(logger, {{CHILD_VAR}}Converter);
+        {{ENTITY_NAME}} input = new {{ENTITY_NAME}}(); // no expanded child
+
+        {{ENTITY_NAME}}Output out = sut.convert(input);
+
+        assertNotNull(out);
+        assertNull(out.get{{CHILD_NAME}}Output());
+        verify({{CHILD_VAR}}Converter, never()).convert(any());
+    }
+}

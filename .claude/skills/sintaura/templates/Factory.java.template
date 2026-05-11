@@ -1,0 +1,27 @@
+package {{PACKAGE}}.factories;
+
+import net.datafaker.Faker;
+import org.instancio.Instancio;
+import {{PACKAGE}}.models.{{ENTITY_NAME}};
+
+import static org.instancio.Select.field;
+
+public final class {{ENTITY_NAME}}Factory {
+
+    private static final Faker FAKER = new Faker();
+
+    private {{ENTITY_NAME}}Factory() {}
+
+    public static {{ENTITY_NAME}} create() {
+{{FACTORY_PREAMBLE}}
+        return Instancio.of({{ENTITY_NAME}}.class)
+{{INSTANCIO_OVERRIDES}}
+            .create();
+    }
+
+    public static java.util.List<{{ENTITY_NAME}}> createMany(int count) {
+        var list = new java.util.ArrayList<{{ENTITY_NAME}}>(count);
+        for (int i = 0; i < count; i++) list.add(create());
+        return list;
+    }
+}

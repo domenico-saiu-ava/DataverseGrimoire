@@ -1,0 +1,33 @@
+package {{PACKAGE}};
+
+import com.github.tomakehurst.wiremock.junit5.WireMockRuntimeInfo;
+import com.github.tomakehurst.wiremock.junit5.WireMockTest;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import {{PACKAGE}}.models.{{ENTITY_NAME}};
+import {{PACKAGE}}.providers.{{ENTITY_NAME}}Provider;
+import {{PACKAGE}}.stubs.{{ENTITY_NAME}}Stub;
+
+import java.net.URI;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+@WireMockTest
+class {{ENTITY_NAME}}StubTest {
+
+    @Test
+    @DisplayName("{{ENTITY_NAME}}Provider.findAll() against the WireMock stub returns populated DTOs")
+    void shouldReturnPopulated{{ENTITY_NAME}}List(WireMockRuntimeInfo wm) throws Exception {
+        {{ENTITY_NAME}}Stub.stub{{HTTP_METHOD_PASCAL}}List(wm.getWireMock(), 5);
+
+        var provider = new {{ENTITY_NAME}}Provider(URI.create(wm.getHttpBaseUrl()));
+        List<{{ENTITY_NAME}}> results = provider.findAll();
+
+        assertEquals(5, results.size(), "stub must return exactly 5 records");
+        {{ENTITY_NAME}} first = results.get(0);
+        assertNotNull(first, "first record must be non-null");
+{{TEST_FIRST_DTO_ASSERTIONS}}
+    }
+}

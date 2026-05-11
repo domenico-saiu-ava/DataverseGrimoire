@@ -9,13 +9,10 @@ You have access to a local wiki with **~1350 Microsoft Dataverse / Dynamics 365 
 
 ## Wiki layout
 
-- `wiki/index.json` — array of all entities with `{logical, display, displayPlural, entitySetName, primaryIdAttribute, primaryNameAttribute, description, synonyms_it, synonyms_en, attributeCount, relationshipCount, file, source?, envHost?}`. **Read this first** for any lookup (technical layer, authoritative). The `file` field contains the relative path inside `wiki/`.
+- `wiki/index.json` — array of all entities with `{logical, display, displayPlural, entitySetName, primaryIdAttribute, primaryNameAttribute, description, synonyms_it, synonyms_en, attributeCount, relationshipCount, file, source?, envHost?}`. **Read this first** for any lookup. The `file` field contains the relative path inside `wiki/`.
 - `wiki/entities/{logical}.md` — per-entity sheet from public Microsoft docs.
 - `wiki/custom/{logical}.md` — per-entity sheet for entities pulled live from a Dataverse tenant (`source: "custom"` in the index, `envHost` identifies the source environment). Same format as `entities/`.
 - `wiki/samples/{logical}.md` — links to PowerApps-Samples files that mention the entity.
-- `wiki_from_docs/index.json` — functional layer index, generated from analysis documents (Excel + Word). Entries: `{type, logical, display_it, synonyms_it, business_area, processes, dataverse_logical, doc_sources, file, source: "docs_analysis", generated}`. **Not authoritative for schema — use only to add business context.**
-- `wiki_from_docs/entities/{logical}.md` — functional entity sheet (Italian names, business area, documented fields, AF cross-references).
-- `wiki_from_docs/processes/{slug}.md` — process pages (gestione-lead, esitazione, appuntamenti, etc.).
 
 ## Custom entities (live tenant data)
 
@@ -27,16 +24,16 @@ If the user has populated `wiki/custom/` by running `npm run custom -- --url <en
 
 ## Workflow
 
-### Step 1 — Identify candidates (wiki/index.json — technical, authoritative)
+### Step 1 — Identify candidates
 
 When the user asks about an entity by business term:
 
-1. **Always start by reading `wiki/index.json`**. This is the source of truth for schema.
+1. **Always start by reading `wiki/index.json`**. This is the source of truth for what exists.
 2. Score candidates against the user's term using these signals (in decreasing order of confidence):
    - Exact match on `logical` or `entitySetName` → confidence very high, skip ranking
    - Exact match on any item in `synonyms_it` or `synonyms_en` → confidence high
    - Substring match on `display` or `displayPlural` → confidence medium
-   - Substring match on `description` (case-insensitive) → confidence low; use as tie-breaker only
+   - Substring match on `description` (case-insensitive) → confidence low; only use as tie-breaker
 3. If still ambiguous, fall back to a search across `wiki/entities/*.md` and `wiki/custom/*.md` for the user's term — useful for attributes (e.g. `creditlimit` → search finds it inside `account.md`).
 
 Present **top 3 candidates** as a compact table. Include a `Source` column when at least one candidate is custom:
@@ -50,7 +47,7 @@ Present **top 3 candidates** as a compact table. Include a `Source` column when 
 
 If only one candidate is clearly correct (exact match or single synonym hit), skip the table and go straight to step 2.
 
-### Step 2 — Show the schema sheet (technical layer)
+### Step 2 — Show the schema sheet
 
 Once an entity is identified, read the file at the path indicated by the `file` field in the index entry (either `wiki/entities/{logical}.md` or `wiki/custom/{logical}.md`). Present compactly:
 
@@ -60,41 +57,6 @@ Once an entity is identified, read the file at the path indicated by the `file` 
 - **Key relationships** if relevant (e.g. user asked "where does account link to contact?" → highlight the `account_primary_contact` relationship)
 
 Do not dump the entire entity file unless the user explicitly asks for "everything" or "all attributes" — these files can be hundreds of lines.
-
-### Step 2.5 — Validate with functional layer (wiki_from_docs/index.json)
-
-After presenting the technical schema, **always** check `wiki_from_docs/index.json` for the **top-ranked candidate only**. Match logic: first exact match on `dataverse_logical`, fallback on case-insensitive `display_it` vs technical `display`.
-
-Three possible outcomes:
-
-**✅ Match found, no visible discrepancy** — Read `wiki_from_docs/entities/{logical}.md` and append:
-```
-## Contesto funzionale
-**Business area:** Retail / CRM
-**Processi correlati:** Gestione Lead, Esitazione
-**Riferimenti AF:** AF Retail - Sprint1 §Vista lead, AF SC - Sprint1 §Scheda lead
-**Data documentazione AF:** YYYY-MM-DD
-```
-
-**⚠️ Match found, potential staleness** — If the `generated` date in `wiki_from_docs` is significantly older than the technical entry, or if the user's question reveals a field/concept absent from the AF docs, add:
-```
-## ⚠️ Possibile disallineamento
-La documentazione funzionale (generata il: YYYY-MM-DD) potrebbe non riflettere
-l'implementazione attuale. Preferisci basarti sulla versione tecnica o funzionale?
-
-Bozza messaggio per il team Dataverse:
----
-Oggetto: Verifica allineamento entità `{logical}` — wiki vs analisi funzionale
-Ciao team, ho rilevato una potenziale discrepanza tra la documentazione AF (§...) e lo
-schema attuale dell'entità `{logical}`. In particolare: [dettaglio discrepanza].
-Potreste confermare la versione corretta / aggiornare la documentazione? Grazie
----
-```
-
-**❌ No match in wiki_from_docs** — Brief inline note (non-blocking):
-```
-_⚠️ Entità non documentata nelle analisi funzionali (wiki_from_docs). Schema tecnico disponibile._
-```
 
 ### Step 3 — Code samples (on request)
 

@@ -1,0 +1,5 @@
+package {{PACKAGE_BASE}}.core;
+
+public interface Publisher<T> {
+    void publish(T item) throws Exception;
+}

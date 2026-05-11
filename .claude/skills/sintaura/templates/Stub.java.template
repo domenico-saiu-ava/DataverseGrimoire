@@ -1,0 +1,36 @@
+package {{PACKAGE}}.stubs;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.github.tomakehurst.wiremock.client.WireMock;
+import {{PACKAGE}}.factories.{{ENTITY_NAME}}Factory;
+import {{PACKAGE}}.models.{{ENTITY_NAME}};
+import {{PACKAGE}}.providers.{{ENTITY_NAME}}Provider;
+
+import java.util.Map;
+
+import static com.github.tomakehurst.wiremock.client.WireMock.{{HTTP_METHOD_LOWER}};
+import static com.github.tomakehurst.wiremock.client.WireMock.okJson;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
+
+public final class {{ENTITY_NAME}}Stub {
+
+    private static final ObjectMapper MAPPER = new ObjectMapper().registerModule(new JavaTimeModule());
+
+    private {{ENTITY_NAME}}Stub() {}
+
+    public static void stub{{HTTP_METHOD_PASCAL}}List(WireMock client, int count) throws Exception {
+        var values = {{ENTITY_NAME}}Factory.createMany(count);
+        var body = MAPPER.writeValueAsString(Map.of("value", values));
+        client.register({{HTTP_METHOD_LOWER}}(urlPathEqualTo({{ENTITY_NAME}}Provider.URL_PATH))
+            .willReturn(okJson(body)));
+    }
+
+    public static {{ENTITY_NAME}} stub{{HTTP_METHOD_PASCAL}}Single(WireMock client) throws Exception {
+        var single = {{ENTITY_NAME}}Factory.create();
+        var body = MAPPER.writeValueAsString(single);
+        client.register({{HTTP_METHOD_LOWER}}(urlPathEqualTo({{ENTITY_NAME}}Provider.URL_PATH))
+            .willReturn(okJson(body)));
+        return single;
+    }
+}

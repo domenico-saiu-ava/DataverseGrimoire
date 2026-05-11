@@ -1,0 +1,58 @@
+package {{PACKAGE_BASE}};
+
+import {{PACKAGE_BASE}}.core.ConsoleLogger;
+import {{PACKAGE_BASE}}.core.IntegrationPipeline;
+import {{PACKAGE_BASE}}.core.Logger;
+import {{PACKAGE_BASE}}.core.NullProvider;
+import {{PACKAGE_BASE}}.core.PipelineResult;
+import {{PACKAGE_BASE}}.core.Provider;
+import {{ENTITY_MODEL_FQN}};
+import {{ENTITY_PROVIDER_FQN}};
+
+import java.net.URI;
+
+public final class {{ENTITY_NAME}}Integration {
+
+    private {{ENTITY_NAME}}Integration() { }
+
+    /**
+     * Wire the dependency tree bottom-up (children first, parent last) and
+     * return a pipeline ready to run. Extracted from main() so it's testable
+     * with a mocked Provider.
+     */
+    public static IntegrationPipeline<{{ENTITY_NAME}}, {{ENTITY_NAME}}Output> buildPipeline(
+            Provider<{{ENTITY_NAME}}> provider, Logger logger) {
+
+        {{CHILD_NAME}}Validator   {{CHILD_VAR}}Validator   = new {{CHILD_NAME}}Validator(logger);
+        {{CHILD_NAME}}Converter   {{CHILD_VAR}}Converter   = new {{CHILD_NAME}}Converter(logger);
+        {{CHILD_NAME}}Publisher   {{CHILD_VAR}}Publisher   = new {{CHILD_NAME}}Publisher(logger);
+
+        {{ENTITY_NAME}}Validator validator =
+            new {{ENTITY_NAME}}Validator(logger, {{CHILD_VAR}}Validator);
+        {{ENTITY_NAME}}Converter converter =
+            new {{ENTITY_NAME}}Converter(logger, {{CHILD_VAR}}Converter);
+        {{ENTITY_NAME}}Publisher publisher =
+            new {{ENTITY_NAME}}Publisher(logger, {{CHILD_VAR}}Publisher);
+
+        return new IntegrationPipeline<>(provider, validator, converter, publisher, logger);
+    }
+
+    public static void main(String[] args) throws Exception {
+        Logger logger = new ConsoleLogger();
+
+        String baseUrl = System.getenv("DATAVERSE_BASE_URL");
+        String token   = System.getenv("DATAVERSE_ACCESS_TOKEN");
+
+        Provider<{{ENTITY_NAME}}> provider;
+        if (baseUrl != null && !baseUrl.isBlank() && token != null && !token.isBlank()) {
+            provider = new {{ENTITY_NAME}}Provider(URI.create(baseUrl), token);
+        } else {
+            logger.warn("DATAVERSE_BASE_URL or DATAVERSE_ACCESS_TOKEN not set — using NullProvider (empty list)");
+            provider = new NullProvider<>();
+        }
+
+        IntegrationPipeline<{{ENTITY_NAME}}, {{ENTITY_NAME}}Output> pipeline = buildPipeline(provider, logger);
+        PipelineResult result = pipeline.run();
+        logger.info("done: " + result);
+    }
+}

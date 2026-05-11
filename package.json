@@ -9,16 +9,10 @@
     "update": "node scripts/build-wiki.mjs --update",
     "rebuild": "node scripts/build-wiki.mjs --clean",
     "custom": "node scripts/build-custom.mjs",
-    "custom:logout": "node scripts/build-custom.mjs --logout",
-    "docs": "node scripts/build-wiki-from-docs.mjs",
-    "docs:rebuild": "node scripts/build-wiki-from-docs.mjs --clean",
-    "compare": "node scripts/compare-wikis.mjs",
-    "compare:report": "node scripts/compare-wikis.mjs && node scripts/export-wiki-compare-report.mjs"
+    "custom:logout": "node scripts/build-custom.mjs --logout"
   },
   "dependencies": {
-    "gray-matter": "^4.0.3",
-    "mammoth": "^1.12.0",
-    "xlsx": "^0.18.5"
+    "gray-matter": "^4.0.3"
   },
   "engines": {
     "node": ">=20"
